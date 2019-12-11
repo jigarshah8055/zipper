@@ -1,0 +1,11 @@
+<h1>Welcome to Create Password Protected Zip</h1>
+
+<%= form_tag zipping_folders_path, method: :post, multipart: true do %>
+  <%= label_tag 'Content', 'Select Files' %>
+  <%= file_field_tag('files[]', multiple: true, class: 'drop-target') %>
+  <%= label_tag 'Zip Name', 'Zip Name' %>
+  <%= text_field_tag 'out_name' %>
+  <%= label_tag 'Password', 'Password' %>
+  <%= password_field_tag 'password' %>
+  <%= submit_tag 'Generate!' %>
+<% end %>
